@@ -1,0 +1,418 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+:root {
+     --font-size-xsmall: 1rem;
+     --font-size-small : 1.3rem;
+     --font-size-medium: 1.6rem;
+     --font-size-large: 1.8rem;
+     --font-size-xlarge: 2.4rem;
+     --font-size-xxlarge: 3.2rem;
+     --font-size-hero-title: 4.2rem;
+
+     --color-dark: hsl(0, 0%, 8%);
+     --color-lighter: hsl(0, 0%, 41%);
+
+     --font-weight-small: 500;
+     --font-weight-larger: 700;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+html {
+     font-size: 62.5%;
+     font-family: 'Epilogue', sans-serif;
+     
+}
+
+body {
+     background: hsl(0, 0%, 98%);
+     overflow-x: hidden;
+
+}
+
+p, a, li {
+     font-size: var(--font-size-small);
+     font-weight: var(--font-weight-small);
+     color: var(--color-lighter);
+     text-decoration: none;
+     list-style: none;
+
+}
+
+p {
+     line-height: 1.5;
+}
+
+a:hover {
+     color: var(--color-dark);
+}
+
+h1 {
+     font-size: var(--font-size-xxlarge);
+     font-weight: var(--font-weight-larger);
+}
+
+#hero-title {
+     font-size: var(--font-size-hero-title);
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/* HEADER SECTION */
+
+.main-header {
+     display: flex;
+}
+header {
+     height: 10%;
+     /* border: 1px solid black; */
+     display: flex;
+     justify-content: space-between;
+}
+.head-section-left, .head-section-right {
+     display: flex;
+     align-items: center;
+     /* border: 1px solid black; */
+     padding: 1rem;
+
+}
+
+.head-section-left {
+     gap: 4rem;
+}
+
+.head-section-left ul, .head-section-right ul {
+     display: flex;
+     gap: 1rem;
+}
+
+#register, .btn {
+     border: 1px solid var(--color-lighter);
+     border-radius: 10px;
+     padding: 1rem;
+}
+
+.btn {
+     width: fit-content;
+     background: var(--color-dark);
+     color: hsl(0, 0%, 98%);
+}
+
+#register:hover {
+     border: 1px solid var(--color-dark);
+}
+
+.btn:hover {
+     background: hsl(0, 0%, 98%);
+}
+
+     /* Hamburger Menu */
+
+.hamburger-header {
+     display: flex;
+     /* border: 1px solid black; */
+     align-items: center;
+}
+
+.logo {
+     margin: 2rem;
+}
+
+.primary-navigation {
+     align-items: center;
+     display: flex;
+     gap: 2rem;
+     padding: 0;
+     margin: 0;
+}
+
+.mobile-nav-toggle {
+     display: none;
+}
+
+.logIn-register {
+     display: none;
+}
+
+.logIn-register-desktop {
+     flex: 2;
+     justify-content: flex-end;
+     /* border: 1px solid black; */
+     display: flex;
+     align-items: center;
+     gap: 3rem;
+     padding-right: 2rem;
+}
+
+div#cover {
+     display: none;
+     position: fixed;
+     top: 0;
+     left: 0;
+     height: 0;
+     width: 0;
+     z-index: -1;
+   }
+
+   div#cover.covering {
+     display: block;
+     height: 100%;
+     width: 100%;
+     z-index: 100;
+     background-color: rgba(0, 0, 0, 30%);
+   }
+
+   .features-dropdown, .company-dropdown {
+     padding: 1rem;
+     position: absolute;
+     top: 5rem;
+     left: 10rem;
+     /* border: 1px solid black; */
+     display: none;
+     /* border: 1px solid black; */
+     background: hsl(0, 0%, 98%);
+     border-radius: 8px;
+     box-shadow: 0 0 10px black;
+}
+
+.company-dropdown {
+     left: 20rem;
+}
+
+.features-dropdown[data-visible = true], .company-dropdown[data-visible = true]{
+     display: block;
+     
+}
+
+#featuresArrow[data-visible = true], #companyArrow[data-visible = true]{
+     transform: rotateX(180deg);
+}
+
+.features-dropdown li, .company-dropdown li {
+     padding: 1rem;
+     text-align: left;
+}
+
+.icons {
+     margin-right: 1rem;
+}
+
+/* Main */
+.main-container {
+     width: 80%;
+     margin: auto;
+     padding: 1rem 1rem 1rem 1rem;
+     /* border: 1px solid black; */
+     display: flex;
+}
+
+.main-section {
+     display: flex;
+     flex-direction: column;
+     flex-basis: 100%;
+     gap: 2rem;
+     /* border: 1px solid black; */
+}
+
+.left {
+     padding-top: 6rem;
+}
+
+.main-left-col {
+     display: flex;
+     flex-direction: column;
+     gap: 4rem;
+     /* border: 1px solid black; */
+}
+
+.small {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     gap: .25rem;
+     margin-top: 2rem;
+}
+
+.logo-container {
+     flex-basis: 25%;
+     /* border: 1px solid black; */
+}
+
+.logo-container img {
+     width: 100%;
+     height: fit-content;
+     /* border: 1px solid black; */
+}
+
+.main-img {
+     height: 100%;
+     width: fit-content;
+     /* border: 1px solid red; */
+     background: url(/images/image-hero-desktop.png);
+     background-position: center;
+     background-size: contain;
+     background-repeat: no-repeat;
+
+}
+
+
+
+.mobile {
+     display: none;
+}
+
+.desktop-img {
+     display: block;
+     /* border: 1px solid black; */
+     background: url(/images/image-hero-desktop.png);
+     background-position: center;
+     background-size: contain;
+     background-repeat: no-repeat;
+}
+
+
+@media screen and (max-width: 560px){
+     .primary-navigation {
+          position: fixed;
+          inset: 0 0 0 30%; 
+          z-index: 1000;
+          gap: 3rem;
+          /* inset is a logical operator and shorthand for top - left -right -left properties */
+          background:hsl(0, 0%, 98%);
+          flex-direction: column;
+          padding: min(30vh, 10rem) 4rem;
+          /* the min function basically says at certain screen heights choose the smaller padding of either 30vh or 10rem */
+          /* backdrop filter */
+          /* backdrop-filter: brightness(4rem); */
+          align-items: start;
+          transform: translateX(100%) ;
+          /* This slides it off the page */
+          transition: transform 350ms ease-out;
+     }
+
+     .primary-navigation[data-visible='true']{
+          transform: translateX(0%);
+     }
+
+     .mobile-nav-toggle {
+          display: block;
+          position: absolute;
+          background: url(/images/icon-menu.svg);
+          width: 2.5rem;
+          background-repeat: no-repeat;
+          aspect-ratio: 1;
+          z-index: 9999;
+          top: 2rem;
+          right: 2rem;
+          border: none;
+          cursor: pointer;
+     }
+
+     .mobile-nav-toggle[aria-expanded = true]{
+          background: url(/images/icon-close-menu.svg);
+          cursor: pointer;
+     }
+
+     .logIn-register {
+          display: block;
+          align-self: center;
+          padding: 2rem;
+          width: 100%;
+          /* border: 1px solid black; */
+     }
+
+     .logIn-register > * {
+          display: block;
+          margin-bottom: 4rem;
+          text-align: center;
+     }
+
+     #register {
+          width: 100%;
+     }
+
+     .logIn-register-desktop {
+          display: none;
+     }
+
+     .features-dropdown, .company-dropdown {
+          padding: 1rem;
+          /* border: 1px solid black; */
+          display: none;
+          position: static;
+          background: none;
+          /* border-radius: 8px; */
+          box-shadow: none;
+     }
+
+     .features-dropdown[data-visible = true], .company-dropdown[data-visible = true]{
+          display: block;
+          
+     }
+
+     .main-container {
+          display: block;
+          width: 100%;
+          padding: 0;
+     }
+
+     .main-left-col {
+          text-align: center;
+          /* border: 1px solid black; */
+          align-items: center;
+     }
+
+     .desktop-img {
+          display: none;
+     }
+
+     .mobile {
+          display: block;
+     }
+
+     .main-img {
+          height: 40vh;
+          width: 100%;
+          background-image: url('/images/image-hero-desktop.png');
+          background-size: cover;
+     }
+
+     .left {
+          padding-top: 2rem;
+     }
+}
+
+
+
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
